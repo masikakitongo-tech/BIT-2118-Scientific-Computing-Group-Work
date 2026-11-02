@@ -1,0 +1,4 @@
+# Libraries used by this project (versions the programs were written and tested with)
+numpy==2.5.1
+scipy==1.18.0
+matplotlib==3.11.2

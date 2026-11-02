@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editors and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local tool settings and scratch files
+.claude/
+*.log
+*.tmp
+
+# The lecturer's assignment sheet is course material, not part of my solution.
+# (Delete this line if the lecturer wants it inside the repository.)
+Scientific_Computing Group Work.pdf
