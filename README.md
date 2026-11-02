@@ -5,9 +5,9 @@ Every task from the lecturer's assignment sheet is implemented in Python (NumPy,
 
 | | |
 |---|---|
-| **Student name** | *(write your name here)* |
-| **Registration number** | *(write your registration number here)* |
-| **Group** | *(write your group name or number here)* |
+| **Student name** | *Masika kitongo Jeremiah* |
+| **Registration number** | *BSCCS/2024/55350* |
+| **Group** | *Group* |
 
 ---
 
