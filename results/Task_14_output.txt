@@ -1,0 +1,34 @@
+=== PART 1: Small example - fitting a straight line ===
+Least-squares line: y = 0.0500 + 1.9900 x
+Sum of squared residuals for this line:     0.1070
+Sum of squared residuals for y = 2x:        0.1100
+Sum of squared residuals for y = 0.5 + 1.8x: 0.5400
+Self-check passed: the fitted line has the smallest sum of squared residuals
+
+=== PART 2: Server response time against number of users ===
+Fitted model: y = 0.002167x^2 + -0.1345x + 85.00
+RMSE: 1.55 ms
+Predicted response at 400 users: 377.86 ms
+Residuals (measured - predicted) in ms: [-1.69  1.79  1.43  0.24 -1.79 -1.64  1.67]
+Graphs saved: results/Task_14_response_time_fit.png, results/Task_14_residuals.png
+
+=== PART 3: Parameter changes ===
+(a) Different polynomial models for the same measurements:
+ Degree  RMSE (ms)   Prediction at 400 users (ms)
+      1      18.83                         312.86
+      2       1.55                         377.86
+      3       0.14                         387.86
+
+(b) The 350-user measurement changed from 305 ms to 340 ms:
+    before: y = 0.002167x^2 + -0.1345x + 85.00  -> 400 users: 377.86 ms
+    after:  y = 0.003000x^2 + -0.3929x + 100.00  -> 400 users: 422.86 ms
+
+=== PART 4: Exponential growth of app users ===
+Fitted model: users = 91.68 * exp(0.2504 * month)
+Monthly growth rate: 28.5%
+Doubling time: 2.77 months
+RMSE exponential model: 1.23 thousand users
+RMSE straight-line model: 44.57 thousand users
+Forecast for month 10: exponential = 1122 thousand, straight line = 760 thousand
+Self-check passed: the exponential curve fits better than a straight line
+Graph saved: results/Task_14_user_growth.png

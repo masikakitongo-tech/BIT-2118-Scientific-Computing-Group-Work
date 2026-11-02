@@ -1,0 +1,49 @@
+=== PART 1: Small example - bisection on f(x) = x^3 - x - 2 ===
+f(1) = -2 and f(2) = 4  -> different signs, so a root lies between 1 and 2
+Step          a          b   midpoint       f(mid)
+   1   1.000000   2.000000   1.500000    -0.125000
+   2   1.500000   2.000000   1.750000     1.609375
+   3   1.500000   1.750000   1.625000     0.666016
+   4   1.500000   1.625000   1.562500     0.252197
+   5   1.500000   1.562500   1.531250     0.059113
+   6   1.500000   1.531250   1.515625    -0.034054
+... after 26 halvings: root = 1.52137970
+Self-check passed: f(root) is almost 0
+
+=== PART 2: Equilibrium temperature of a heat-balance equation ===
+Bisection equilibrium temperature: 27.525211 C
+Fixed-point equilibrium temperature: 27.525211 C
+Fixed-point iterations: 13
+Bisection iterations: 38
+Self-check passed: both methods give the same temperature
+Graph saved: results/Task_10_equilibrium_temperature.png
+
+=== PART 3: Parameter changes ===
+(a) Bisection with different brackets and tolerances:
+   Bracket    xtol  Iterations         Root
+  [20, 40]   1e-03          15  27.52502441
+  [20, 40]   1e-10          38  27.52521082
+  [25, 30]   1e-03          13  27.52502441
+  [25, 30]   1e-10          36  27.52521082
+  [27, 28]   1e-03          10  27.52441406
+  [27, 28]   1e-10          34  27.52521082
+
+(b) A bad bracket [30, 40] (f is positive at both ends):
+    f(30) = 2.7687, f(40) = 13.6466
+    root_scalar refused: f(a) and f(b) must have different signs
+
+(c) Fixed-point iteration from different starting temperatures:
+    start =   0.0 C -> 27.525211 C after 15 iterations
+    start =  30.0 C -> 27.525211 C after 13 iterations
+    start = 100.0 C -> 27.525211 C after 14 iterations
+    (It converges because |g'(T)| = 0.5*exp(-T/20) is well below 1 here.)
+
+=== PART 4: Break-even points of a business ===
+Lower break-even point: 86.45 units (exact 86.45)
+Upper break-even point: 2313.55 units (exact 2313.55)
+Most profitable quantity: 1200 units, profit = KES 31,000
+Profit at 50 units:   KES -2,062
+Profit at 500 units:  KES 18,750
+Profit at 3000 units: KES -50,000
+Self-check passed: bisection matches the quadratic formula
+Graph saved: results/Task_10_break_even.png

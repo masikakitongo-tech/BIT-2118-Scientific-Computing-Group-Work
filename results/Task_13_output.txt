@@ -1,0 +1,30 @@
+=== PART 1: Small example - linear interpolation ===
+Estimated temperature at 11:00: 22.0 C   (PDF: 22 C)
+Self-check passed: the estimate is 22 C
+
+=== PART 2: Hourly measurements -> estimates every 10 minutes ===
+Linear estimate at 10:30: 23.25 C
+Cubic estimate at 10:30:  23.36 C
+Number of 10-minute times: 37; last time = np.float64(13.999999999999979) (14 would be exact; np.arange accumulates tiny floating-point errors)
+Self-check passed: both curves pass through every measured point
+Graph saved: results/Task_13_temperature_interpolation.png
+
+=== PART 3: Parameter changes ===
+(a) The 11:00 reading changed from 24.0 C to 26.0 C:
+Method    10:30 before  10:30 after  12:30 before  12:30 after
+Linear           23.25        24.25         25.25        25.25
+Cubic            23.36        24.58         25.34        25.02
+
+(b) Largest gap between linear and cubic: 0.194 C at 8:27
+
+(c) Asking for 15:00 (after the last measurement at 14:00):
+    interp1d refused: A value (15.0) in x_new is above the interpolation range's maximum value (14.0).
+    CubicSpline extrapolates anyway and gives 22.94 C - do not trust it!
+
+=== PART 4: Sensor calibration lookup table ===
+ Voltage (V)  Linear (C)  Cubic (C)  Difference
+        0.75       12.50      12.67        0.17
+        1.80       60.00      60.38        0.38
+        2.70       91.00      91.17        0.17
+        2.95       98.50      98.56        0.06
+Graph saved: results/Task_13_sensor_calibration.png

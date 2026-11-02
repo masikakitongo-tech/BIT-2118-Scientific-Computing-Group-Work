@@ -1,0 +1,44 @@
+=== PART 1: Small example - x^2 - 5x + 6 = 0 ===
+Roots found by np.roots: [2. 3.]   (PDF: x = 2 and x = 3)
+Check by substituting: [8.8817842e-16 8.8817842e-16]
+Self-check passed: the roots are 2 and 3 because (x-2)(x-3) = 0
+
+=== PART 2: Circle and parabola intersections ===
+Initial guess: [1.0, 1.0]
+Intersection: [1.51748991 1.30277564]
+Residuals: [np.float64(-2.4780177909633494e-13), np.float64(-2.4158453015843406e-13)]
+Converged: True
+
+Initial guess: [-1.0, 1.0]
+Intersection: [-1.51748991  1.30277564]
+Residuals: [np.float64(-2.4780177909633494e-13), np.float64(-2.4158453015843406e-13)]
+Converged: True
+
+Exact answer by algebra: x = +/-1.517490, y = 1.302776
+
+=== PART 3: Parameter changes ===
+(a) Original circle, radius^2 = 4, four starting guesses:
+    guess   [1.0, 1.0] -> [1.5175 1.3028]  converged: True
+    guess  [-1.0, 1.0] -> [-1.5175  1.3028]  converged: True
+    guess  [1.0, -1.0] -> [-3.0000e-04 -1.9385e+00]  converged: False
+    guess [-1.0, -1.0] -> [ 3.0000e-04 -1.9385e+00]  converged: False
+    Different intersections found: 2
+(b) Bigger circle, radius^2 = 9:
+    guess   [1.0, 1.0] -> [1.8364 2.3723]  converged: True
+    guess  [-1.0, 1.0] -> [-1.8364  2.3723]  converged: True
+    guess  [1.0, -1.0] -> [-1.0000e-04 -2.9458e+00]  converged: False
+    guess [-1.0, -1.0] -> [ 1.0000e-04 -2.9458e+00]  converged: False
+    Different intersections found: 2
+    Exact answer by algebra: x = +/-1.8364, y = 2.3723
+
+=== PART 4: Where does the ship cross the radar boundary? ===
+guess  [-8.0, 5.0] -> [-8.8016  4.7468]  converged: True  residuals: [-0. -0.]
+guess   [8.0, 5.0] -> [8.8016 4.7468]  converged: True  residuals: [-0. -0.]
+guess  [0.0, -9.0] -> [ 7.4000e-03 -9.9829e+00]  converged: False  residuals: [-0.34083326 -6.98294652]
+
+Distinct crossing points found: 2
+  (-8.802 km, 4.747 km)  distance from radar = 10.000 km
+  (8.802 km, 4.747 km)  distance from radar = 10.000 km
+Exact answer by algebra: x = +/-8.802, y = 4.747
+At x = 0 the ship is only 3.0 km from the radar (closest approach)
+Self-check passed: two crossings, matching the algebra

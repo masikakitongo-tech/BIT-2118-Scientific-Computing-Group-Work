@@ -1,0 +1,34 @@
+=== PART 1: Small example - Newton for f(x) = x^2 - 2 ===
+x0 = 1.5000000000
+x1 = 1.4166666667   error = 2.45e-03
+x2 = 1.4142156863   error = 2.12e-06
+x3 = 1.4142135624   error = 1.59e-12
+x4 = 1.4142135624   error = 0.00e+00
+Self-check passed: x1 = 1.4167 as in the PDF, and the method reaches sqrt(2)
+
+=== PART 2: Internal rate of return (IRR) ===
+IRR using Newton-Raphson: 11.542461%
+IRR using Secant method:  11.542461%
+NPV at Newton solution:   0.000000
+Iterations: Newton = 4 | Secant = 7
+Self-check passed: both methods agree and NPV is about 0
+
+=== PART 3: Parameter changes ===
+(a) Different starting guesses (Newton, secant uses x0/2 and 2*x0):
+    x0   Newton IRR  Newton iter   Secant IRR  Secant iter
+  0.01   11.542461%            5   11.542461%            7
+   0.1   11.542461%            4   11.542461%            7
+   0.5   11.542461%            8   11.542461%           11
+
+(b) Last inflow changed from 2500 to 3500:
+    IRR before: 11.5425%   IRR after: 14.4561%
+
+=== PART 4: True interest rate of an instalment plan ===
+Monthly interest rate (Newton): 1.5560%   (Secant: 1.5560%)
+Nominal annual rate (12 x monthly): 18.67%
+Effective annual rate (compounded): 20.36%
+Total paid: KES 55,200 | extra over cash price: KES 5,200
+Present value of the instalments at that rate: KES 50,000.00
+Self-check passed: the discounted instalments equal the cash price
+
+If the instalment were KES 4,400: monthly rate = 0.8484%, effective annual rate = 10.67%
