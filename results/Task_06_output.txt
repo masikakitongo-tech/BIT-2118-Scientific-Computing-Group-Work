@@ -1,0 +1,26 @@
+=== PART 1: Small example from the PDF ===
+Solution [x, y] = [1. 2.]   (PDF: x = 1, y = 2)
+Check: 2(1) + 3(2) = 8 and 4(1) + 2 = 6
+
+=== PART 2: How many servers of each type? ===
+Type A servers: 3
+Type B servers: 4
+Verification A @ solution: [20. 72.]
+Residual: [0. 0.]
+Residual norm: 0.0
+
+=== PART 3: Parameter changes ===
+(a) Totals changed from [20. 72.] to [24. 80.]
+    Type A servers: 4, Type B servers: 4
+
+(b) Making the second server type identical to the first:
+    Determinant: 0.0
+    np.linalg.solve failed with: Singular matrix
+
+=== PART 4: Currents in a three-loop circuit ===
+I1 = 1.2770 A (clockwise)
+I2 = 0.1924 A (clockwise)
+I3 = -0.5598 A (anticlockwise)
+Current through shared resistor R2 (I1 - I2): 1.0845 A
+Residual norm: 9.992007221626409e-16
+Self-check passed: the currents satisfy all three loop equations

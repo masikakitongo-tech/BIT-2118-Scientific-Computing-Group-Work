@@ -1,0 +1,34 @@
+=== PART 1: Small example - A v = lambda v ===
+Eigenvalues: [3.+0.j 1.+0.j]
+Eigenvectors (as columns):
+ [[ 0.70710678+0.j -0.70710678+0.j]
+ [ 0.70710678+0.j  0.70710678+0.j]]
+A @ [1, 1] = [3. 3.] = 3 * [1, 1] ->  eigenvalue 3
+Self-check passed: A v = 3 v, so 3 is an eigenvalue with eigenvector [1, 1]
+
+=== PART 2: Which network node is most influential? ===
+Dominant eigenvalue: 2.5615528128088276
+Eigenvector-based importance:
+A: 0.2192
+B: 0.2808
+C: 0.2808
+D: 0.2192
+Verification error: 2.6921477609369894e-15
+
+=== PART 3: Parameter change - add a link A-D ===
+Dominant eigenvalue: 2.5616 -> 3.0000
+Node    Before   After
+A       0.2192  0.2500
+B       0.2808  0.2500
+C       0.2808  0.2500
+D       0.2192  0.2500
+
+=== PART 4: PageRank of four web pages ===
+Dominant eigenvalue of the Google matrix: 1.0
+Page    Eigenvector  Power iteration
+A            0.3725           0.3725
+B            0.1958           0.1958
+C            0.3941           0.3941
+D            0.0375           0.0375
+Self-check passed: both methods give the same ranking
+Most important page: C

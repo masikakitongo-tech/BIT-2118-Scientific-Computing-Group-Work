@@ -1,0 +1,42 @@
+=== PART 1: Small example - estimates converge to 2 ===
+Iteration 1: x = 1.500000, y = 1.333333
+Iteration 2: x = 1.833333, y = 1.833333
+Iteration 3: x = 1.958333, y = 1.944444
+Iteration 4: x = 1.986111, y = 1.986111
+Iteration 5: x = 1.996528, y = 1.995370
+Iteration 6: x = 1.998843, y = 1.998843
+Iteration 7: x = 1.999711, y = 1.999614
+Iteration 8: x = 1.999904, y = 1.999904
+Self-check passed: both estimates are approaching 2
+
+=== PART 2: Temperatures at five grid points ===
+Jacobi temperatures: [86.66666665 73.33333331 59.99999997 46.66666664 33.33333332]
+Gauss-Seidel temperatures: [86.66666665 73.3333333  59.99999997 46.66666665 33.33333332]
+Direct solution: [86.66666667 73.33333333 60.         46.66666667 33.33333333]
+Iterations needed: Jacobi = 150 | Gauss-Seidel = 75
+Self-check passed: both iterative answers match the direct solution
+Graph saved: results/Task_08_convergence.png
+
+=== PART 3: Parameter changes ===
+(a) Iterations needed for different tolerances:
+ Tolerance   Jacobi  Gauss-Seidel
+     1e-02       54            27
+     1e-04       86            43
+     1e-08      150            75
+
+(b) Right boundary changed from 20 C to 60 C (Gauss-Seidel):
+    before: [86.667 73.333 60.    46.667 33.333]
+    after:  [93.333 86.667 80.    73.333 66.667]
+
+=== PART 4: Steady-state temperatures on a heated plate ===
+Unknowns: 25 | non-zero coefficients: 105 of 625 (16.8%)
+Iterations needed: Jacobi = 140 | Gauss-Seidel = 73
+Largest difference from direct solution (Gauss-Seidel): 2.3939843885045775e-08
+Self-check passed: Gauss-Seidel matches the direct solution
+Temperature grid (rows from the hot top edge to the bottom edge):
+[[46.87 62.92 66.94 62.92 46.87]
+ [24.55 37.88 41.93 37.88 24.55]
+ [13.46 22.12 25.   22.12 13.46]
+ [ 7.18 12.12 13.84 12.12  7.18]
+ [ 3.13  5.35  6.13  5.35  3.13]]
+Graph saved: results/Task_08_plate_temperature.png

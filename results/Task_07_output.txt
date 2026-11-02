@@ -1,0 +1,52 @@
+=== PART 1: Gaussian elimination and back-substitution ===
+Upper-triangular matrix after elimination:
+ [[ 4.     -1.      0.    ]
+ [ 0.      3.75   -1.    ]
+ [ 0.      0.      2.7333]]
+Reduced right-hand side: [15.     13.75   13.6667]
+Solution by Gaussian elimination: [5. 5. 5.]
+Self-check passed: matches np.linalg.solve
+
+=== PART 2: LU decomposition with several measurement vectors ===
+Measurement set 1
+Solution: [5. 5. 5.]
+Residual norm: 0.0
+
+Measurement set 2
+Solution: [5.31707317 5.26829268 4.75609756]
+Residual norm: 1.7763568394002505e-15
+
+Measurement set 3
+Solution: [4.90243902 5.6097561  5.53658537]
+Residual norm: 0.0
+
+Direct solution for first set: [5. 5. 5.]
+
+=== PART 3: Parameter changes ===
+(a) b doubled -> solution doubled:
+    original solution: [5. 5. 5.]
+    solution for 2*b:  [10. 10. 10.]
+(b) A[0,0] changed from 4 to 6:
+    original solution: [5. 5. 5.]
+    new solution:      [3.254  4.5238 4.8413]
+(c) 200 solves of a 400 x 400 system:
+    solve from scratch each time: 8.090 s
+    LU factor once, reuse:        0.024 s
+    LU is about 336.7x faster
+
+=== PART 4: Production needed to meet demand (Leontief model) ===
+Year 1
+  Agriculture    final demand   40.0  ->  must produce   73.14
+  Manufacturing  final demand   60.0  ->  must produce  126.10
+  Services       final demand   80.0  ->  must produce  118.03
+  Total production 317.28 vs total final demand 180.0
+Year 2
+  Agriculture    final demand   44.0  ->  must produce   79.52
+  Manufacturing  final demand   63.0  ->  must produce  133.37
+  Services       final demand   85.0  ->  must produce  125.51
+  Total production 338.40 vs total final demand 192.0
+Year 3
+  Agriculture    final demand   48.0  ->  must produce   86.28
+  Manufacturing  final demand   68.0  ->  must produce  143.53
+  Services       final demand   90.0  ->  must produce  133.51
+  Total production 363.32 vs total final demand 206.0
