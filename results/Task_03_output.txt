@@ -1,0 +1,26 @@
+=== PART 1: Small example from the PDF ===
+x           = [0.         1.57079633 3.14159265]
+sin(x)      = [0.0000000e+00 1.0000000e+00 1.2246468e-16]   (approximately [0, 1, 0])
+sin^2 + cos^2 on 1,000,000 values: smallest = 0.9999999999999998  largest = 1.0000000000000002
+Largest distance from 1: 2.220446049250313e-16
+Self-check passed: the identity holds for all 1,000,000 values
+
+=== PART 2: Network latency - loop versus vectorization ===
+First five squared latency values: [0.03787665 0.01266192 0.04637842 0.03092504 0.00078812]
+Loop time: 0.2021 seconds
+Vectorized time: 0.0056 seconds
+Approximate speed-up: 36.3x
+Self-check passed: loop and vectorized results are identical
+
+=== PART 3: Parameter change - number of readings ===
+  Readings   Loop (s)  Vectorized (s)   Speed-up
+ 1,000,000     0.2301         0.00600      38.4x
+   500,000     0.1009         0.00281      35.9x
+   100,000     0.0195         0.00127      15.4x
+
+=== PART 4: Image brightening (gamma correction) ===
+Self-check passed: loop and vectorized images are identical
+Mean brightness before: 60.0 (scale 0-255)
+Mean brightness after:  101.2 (scale 0-255)
+Brightest pixel before: 120   after: 162.2
+Loop time: 0.2834 s | Vectorized time: 0.0255 s | Speed-up: 11.1x

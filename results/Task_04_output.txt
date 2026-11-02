@@ -1,0 +1,40 @@
+=== PARTS 1-2: Lecturer's examples ===
+0.1 + 0.2 = 0.30000000000000004
+Exact comparison: False
+Tolerance-based comparison: True
+Absolute error: 0.00021356
+Relative error: 0.01510114%
+x=1e-04: direct=0.499987500624, stable=0.499987500625
+x=1e-08: direct=0.499999996961, stable=0.499999998750
+x=1e-12: direct=0.500044450291, stable=0.500000000000
+
+=== PART 3: Parameter changes ===
+
+(a) Changing the approximation of sqrt(2):
+ Approximation   Absolute error   Relative error
+           1.4       0.01421356       1.005051%
+          1.41       0.00421356       0.297944%
+         1.414       0.00021356       0.015101%
+        1.4142       0.00001356       0.000959%
+       1.41421       0.00000356       0.000252%
+
+(b) Making x even smaller:
+x=1e-12: direct=0.500044450291, stable=0.500000000000
+x=1e-14: direct=0.488498130835, stable=0.500000000000
+x=1e-16: direct=0.000000000000, stable=0.500000000000
+
+(c) Accumulated round-off (adding 0.1 repeatedly):
+Sum of ten 0.1 values = 0.9999999999999999 | equals 1.0? False | np.isclose: True
+Sum of one million 0.1 values = 100000.00000133288 | exact answer = 100000 | error = 1.3328826753422618e-06
+
+Measurement Accuracy Check
+Actual measurement: 2.0
+Measured value: 1.998
+Measurement error: 0.0020000000000000018
+Percentage error: 0.10%
+Result: Measurement is within the accepted tolerance.
+
+Changing the accepted tolerance (atol):
+  atol = 0.005: error 0.002 is WITHIN the tolerance
+  atol = 0.003: error 0.002 is WITHIN the tolerance
+  atol = 0.001: error 0.002 is OUTSIDE the tolerance
