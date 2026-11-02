@@ -1,0 +1,34 @@
+=== PART 1: Small example - minimise f(x) = (x - 3)^2 + 2 ===
+Minimum found at x = 3.000000, f(x) = 2.000000   (PDF: x = 3, minimum value 2)
+Self-check passed: the minimum is at x = 3 with value 2
+
+=== PART 2: Cheapest server allocation ===
+Optimization success: True
+Type A allocation: 0.000
+Type B allocation: 5.882
+Total capacity: 1000.00
+Minimum planning cost: 105.88
+Best nearby integer solution: (108, 0, 6, 1020)
+Cost per unit of capacity: A = 0.12 | B = 0.1059 -> Type B is cheaper per unit of capacity
+
+=== PART 3: Parameter changes ===
+ Cost A  Cost B  Required |  Units A  Units B  Min cost |  Whole servers (cost, A, B)
+     12      18      1000 |    0.000    5.882    105.88 |                 (108, 0, 6)
+     12      22      1000 |   10.000    0.000    120.00 |                (120, 10, 0)
+     12      18      1500 |    0.000    8.824    158.82 |                 (162, 0, 9)
+
+=== PART 4: Furniture workshop - maximise weekly profit ===
+Optimization success: True
+Tables per week: 32.00
+Chairs per week: 36.00
+Maximum weekly profit: KES 2360.00 thousand
+Labour used: 100.0 of 100 hours | wood used: 240.0 of 240 units
+Best whole-number plan (profit, tables, chairs): (2360, 32, 36)
+Self-check passed: the solver agrees with a brute-force search
+
+Parameter changes:
+ Profit/table  Profit/chair  Labour |  Tables  Chairs   Profit
+           40            30     100 |      32      36     2360
+           40            60     100 |       0      60     3600
+           40            30     120 |      48      24     2640
+Graph saved: results/Task_19_production_plan.png

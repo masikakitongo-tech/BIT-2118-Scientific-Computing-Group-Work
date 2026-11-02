@@ -1,0 +1,33 @@
+=== PART 1: Small example - exponential decay dy/dt = -k y ===
+ t (h)   solve_ivp     Exact
+     0    100.0000  100.0000
+     2     54.8812   54.8812
+     5     22.3130   22.3130
+    10      4.9787    4.9787
+Self-check passed: the numerical solution matches y0 * exp(-k t)
+
+=== PART 2: Charging an RC circuit ===
+Solver success: True
+Capacitor voltage at 5 s: 4.9663 V
+Maximum error against exact solution: 9.282e-10 V
+Time constant R*C = 1.0 s (voltage reaches 63.2% of 5.0 V = 3.16 V at this time)
+Graph saved: results/Task_18_rc_circuit.png
+
+=== PART 3: Parameter changes ===
+(a) Capacitor voltage (V) at different times for different capacitances:
+   C (F)  RC (s)  V at 1 s  V at 2 s  V at 5 s
+   0.001     1.0     3.161     4.323     4.966
+   0.002     2.0     1.967     3.161     4.590
+
+(b) Different accuracy settings (original circuit):
+    rtol  Function calls   Largest error (V)
+   1e-03              56            6.64e-04
+   1e-06             122            8.67e-07
+   1e-09             386            9.28e-10
+
+=== PART 4: Epidemic spread (SIR model) ===
+ beta   R0  Peak infected  Peak day  Infected by day 160
+  0.3  3.0           3008      38.2                 9405
+ 0.15  1.5            637     114.0                 5259
+Self-check passed: S + I + R equals the population at every time
+Graph saved: results/Task_18_sir_epidemic.png

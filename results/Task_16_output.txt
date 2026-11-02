@@ -1,0 +1,34 @@
+=== PART 1: Small example from the PDF ===
+Energy for 2 kW over 3 h: 6.0 kWh  (PDF: 6 kWh)
+
+Integral of sin(x) from 0 to pi (exact answer = 2) with different numbers of samples:
+ Samples  Trapezoid error   Simpson error
+       5         1.04e-01        4.56e-03
+       9         2.58e-02        2.69e-04
+      17         6.43e-03        1.66e-05
+      33         1.61e-03        1.03e-06
+SciPy adaptive quad: 2.000000000000 (estimated error 2.2e-14)
+Self-check passed: Simpson is far more accurate than the trapezoidal rule
+
+=== PART 2: Energy used according to a smart meter ===
+Energy using trapezoidal rule: 15.700 kWh
+Energy using Simpson's rule:   15.800 kWh
+Difference between estimates:  0.100 kWh
+Graph saved: results/Task_16_energy_area.png
+
+=== PART 3: Parameter changes ===
+(a) The reading at 6 h changed from 1.8 kW to 2.4 kW:
+    trapezoid: 15.700 -> 16.900 kWh
+    Simpson:   15.800 -> 17.400 kWh
+
+(b) Using only the readings at 0, 4, 8 and 12 h:
+    trapezoid: 15.700 -> 15.400 kWh
+    Simpson:   15.800 -> 15.967 kWh
+
+=== PART 4: Distance travelled by a delivery rider ===
+Distance (trapezoidal rule): 3.733 km
+Distance (Simpson's rule):   3.756 km
+Average speed over the trip: 22.4 km/h
+Top speed recorded:          35 km/h
+Wrong shortcut (mean of readings x 10 min): 3.394 km
+Self-check passed: both rules agree to within 0.1 km

@@ -1,0 +1,44 @@
+=== PART 1: Small example - dy/dt = y, y(0) = 1, h = 0.1 ===
+t = 0.0: y = 1.0000
+t = 0.1: y = 1.1000
+t = 0.2: y = 1.2100
+t = 0.3: y = 1.3310
+t = 1.0: y = 2.5937
+Exact answer at t = 1: e = 2.7183; Euler error = 0.1245
+Self-check passed: y1 = 1.1 and y2 = 1.21, as in the PDF
+
+=== PART 2: Cooling of a hot object (Newton's law of cooling) ===
+Euler temperature after 30 min: 26.40 C
+Exact temperature after 30 min: 26.78 C
+Final absolute error: 0.3720 C
+Graph saved: results/Task_17_cooling.png
+
+=== PART 3: Parameter changes ===
+(a) Different step sizes h (k = 0.12):
+ h (min)  Steps  Euler at 30 min    Exact    Error
+     5.0      6           25.266   26.776    1.510
+     2.0     15           26.060   26.776    0.717
+     1.0     30           26.404   26.776    0.372
+     0.5     60           26.587   26.776    0.189
+     0.1    300           26.738   26.776    0.038
+
+(b) Different cooling constants k (h = 1 min):
+    k = 0.06: Euler = 35.16 C, exact = 35.74 C
+    k = 0.12: Euler = 26.40 C, exact = 26.78 C
+    k = 0.30: Euler = 25.00 C, exact = 25.01 C
+
+(c) A very large k = 2.5 with h = 1 min (k*h > 2 -> unstable):
+    Euler temperatures: [  90.   -72.5  171.2 -194.4  354.1 -468.6] ...
+    The true temperature should always fall smoothly towards 25 C - Euler swings wildly.
+Graph saved: results/Task_17_step_sizes.png
+
+=== PART 4: Logistic growth of a bacteria colony ===
+ Day     Exact  Euler h=2  Euler h=0.5
+   0      10.0       10.0         10.0
+  10     355.5      171.4        290.6
+  20     967.9      942.3        964.0
+  30     999.4     1000.0        999.6
+Largest error: h = 2 -> 284.0; h = 0.5 -> 79.1 (hundred bacteria)
+Colony reaches half of capacity (500) after 11.5 days
+Self-check passed: the smaller step size gives the smaller error
+Graph saved: results/Task_17_logistic_growth.png
